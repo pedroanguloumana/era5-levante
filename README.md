@@ -11,11 +11,15 @@ On Levante, install ecCodes/cfgrib and xarray/Dask in a Conda environment,
 then install this repository through SSH:
 
 ```bash
-conda install -c conda-forge eccodes cfgrib xarray dask
+conda install -c conda-forge git eccodes cfgrib xarray dask
 pip install git+ssh://git@github.com/pedroanguloumana/era5-levante.git
 ```
 
-GitHub SSH authentication must be configured on the machine running `pip`.
+GitHub SSH authentication must be configured on the machine running `pip`;
+that machine needs access to a private key registered with GitHub (a `.pub`
+file alone cannot authenticate). Check with
+`git ls-remote git@github.com:pedroanguloumana/era5-levante.git HEAD` before
+installing.
 Use `pip install --upgrade git+ssh://git@github.com/pedroanguloumana/era5-levante.git`
 to update an existing installation.
 
