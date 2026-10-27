@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "era5-levante"
+version = "0.1.0"
+description = "Find and lazily open DKRZ Levante E5 ERA5 GRIB files"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "cfgrib>=0.9.10",
+    "dask[array]>=2024.1",
+    "eccodes>=1.6",
+    "numpy>=1.24",
+    "xarray>=2024.1",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+era5_levante = ["data/parameters.csv"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
